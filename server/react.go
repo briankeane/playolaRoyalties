@@ -185,7 +185,7 @@ func newJSVM(filePath string, proxy http.Handler) *JSVM {
 
 	vm.EventLoop.Start()
 	fetch.Enable(vm.EventLoop, proxy)
-	bundle := MustAsset(filePath)
+	bundle := filePath
 
 	vm.EventLoop.RunOnLoop(func(_vm *goja.Runtime) {
 		var seed int64

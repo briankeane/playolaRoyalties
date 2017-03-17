@@ -1,5 +1,5 @@
 hash: 9a4abdb74b5f16022c109e270f0675f78248db84305febd6379efb4f4edbc59f
-updated: 2017-03-17T10:57:27.298952096-05:00
+updated: 2017-03-17T13:53:10.544749685-05:00
 imports:
 - name: github.com/codegangsta/cli
   version: 9e5b04886c4bfee2ceba1465b8121057355c4e53
@@ -32,7 +32,7 @@ imports:
 - name: github.com/jteeuwen/go-bindata
   version: a0ff2567cfb70903282db057e799fd826784d41d
 - name: github.com/labstack/echo
-  version: b2430fc4a8c023dd6a07fd3f7be19f3747861dca
+  version: cb6f0a5f807e2ef5abeaf26272ef7dda9455dc47
   subpackages:
   - middleware
 - name: github.com/labstack/gommon
@@ -66,7 +66,7 @@ imports:
 - name: github.com/valyala/fasttemplate
   version: dcecefd839c4193db0d35b88ec65b4c12d360ab0
 - name: golang.org/x/crypto
-  version: 728b753d0135da6801d45a38e6f43ff55779c5c2
+  version: 459e26527287adbc2adcc5d0d49abff9a5f315a7
   subpackages:
   - acme
   - acme/autocert

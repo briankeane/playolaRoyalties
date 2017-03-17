@@ -18,6 +18,10 @@ GLIDE         := $(shell command -v glide 2> /dev/null)
 
 build: $(ON) $(GO_BINDATA) clean $(TARGET)
 
+
+sbuild: $(ON) $(GO_BINDATA) clean $(BUNDLE)
+	@go build -ldflags '$(LDFLAGS)' -o $@ $(IMPORT_PATH)/server
+
 clean:
 	@rm -rf server/data/static/build/*
 	@rm -rf server/data/bundle.server.js
@@ -33,6 +37,9 @@ $(BUNDLE): $(APP)
 	@$(NODE_BIN)/webpack --progress --colors --bail
 
 $(TARGET): $(BUNDLE) $(BINDATA)
+	@go build -ldflags '$(LDFLAGS)' -o $@ $(IMPORT_PATH)/server
+
+$(SERVER_TARGET): $(BUNDLE)
 	@go build -ldflags '$(LDFLAGS)' -o $@ $(IMPORT_PATH)/server
 
 kill:

@@ -5,8 +5,8 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/elazarl/go-bindata-assetfs"
-	"github.com/itsjamie/go-bindata-templates"
+	// "github.com/elazarl/go-bindata-assetfs"
+	// "github.com/itsjamie/go-bindata-templates"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"github.com/nu7hatch/gouuid"
@@ -98,11 +98,11 @@ func NewApp(opts ...AppOptions) *App {
 	)
 
 	// Create file http server from bindata
-	fileServerHandler := http.FileServer(&assetfs.AssetFS{
-		Asset:     Asset,
-		AssetDir:  AssetDir,
-		AssetInfo: AssetInfo,
-	})
+	// fileServerHandler := http.FileServer(&assetfs.AssetFS{
+	// 	Asset:     Asset,
+	// 	AssetDir:  AssetDir,
+	// 	AssetInfo: AssetInfo,
+	// })
 
 	// Serve static via bindata and handle via react app
 	// in case when static file was not found
@@ -116,12 +116,12 @@ func NewApp(opts ...AppOptions) *App {
 				if ok && httpErr.Code == http.StatusNotFound {
 					// check if file exists
 					// omit first `/`
-					if _, err := Asset(c.Request().URL.Path[1:]); err == nil {
-						fileServerHandler.ServeHTTP(
-							c.Response().Writer,
-							c.Request())
-						return nil
-					}
+					// if _, err := Asset(c.Request().URL.Path[1:]); err == nil {
+					// 	fileServerHandler.ServeHTTP(
+					// 		c.Response().Writer,
+					// 		c.Request())
+					// 	return nil
+					// }
 					// if static file not found handle request via react application
 					return app.React.Handle(c)
 				}
@@ -147,7 +147,8 @@ type Template struct {
 // NewTemplate creates a new template
 func NewTemplate() *Template {
 	return &Template{
-		templates: binhtml.New(Asset, AssetDir).MustLoadDirectory("templates"),
+
+		templates: template.Must(template.ParseFiles("server/templates/react.html")),
 	}
 }
 
