@@ -4,7 +4,6 @@ description = "HTTP/2 example for Echo"
 [menu.main]
   name = "HTTP/2"
   parent = "cookbook"
-  weight = 3
 +++
 
 HTTP/2 (originally named HTTP/2.0) is the second major version of the HTTP network
@@ -31,7 +30,7 @@ This will generate `cert.pem` and `key.pem` files.
 > For demo purpose, we are using a self-signed certificate. Ideally you should obtain
 a certificate from [CA](https://en.wikipedia.org/wiki/Certificate_authority).
 
-### Configure a server with `engine.Config`
+## Server
 
 `server.go`
 

@@ -4,7 +4,6 @@ description = "Trailing slash middleware for Echo"
 [menu.main]
   name = "Trailing Slash"
   parent = "middleware"
-  weight = 5
 +++
 
 ## Add Trailing Slash  
@@ -59,6 +58,6 @@ TrailingSlashConfig struct {
 
 ```go
 DefaultTrailingSlashConfig = TrailingSlashConfig{
-  Skipper: defaultSkipper,
+  Skipper: DefaultSkipper,
 }
 ```

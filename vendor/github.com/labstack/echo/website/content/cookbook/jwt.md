@@ -5,7 +5,6 @@ description = "JWT example for Echo"
   name = "JWT"
   identifier = "example-jwt"
   parent = "cookbook"
-  weight = 11
 +++
 
 - JWT authentication using HS256 algorithm.
@@ -57,10 +56,7 @@ curl localhost:1323/restricted -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR
 Welcome Jon Snow!
 ```
 
-## Source Code
-
-- [With default Map claims]({{< source "jwt/map-claims" >}})
-- [With custom claims]({{< source "jwt/custom-claims" >}})
+## [Source Code]({{< source "jwt" >}})
 
 ## Maintainers
 

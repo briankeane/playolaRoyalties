@@ -4,8 +4,15 @@ description = "Graceful shutdown example for Echo"
 [menu.main]
   name = "Graceful Shutdown"
   parent = "cookbook"
-  weight = 13
 +++
+
+## Using [http.Server#Shutdown()](https://golang.org/pkg/net/http/#Server.Shutdown)
+
+`server.go`
+
+{{< embed "graceful-shutdown/server.go" >}}
+
+> Requires go1.8+
 
 ## Using [grace](https://github.com/facebookgo/grace)
 
@@ -19,10 +26,7 @@ description = "Graceful shutdown example for Echo"
 
 {{< embed "graceful-shutdown/graceful/server.go" >}}
 
-## Source Code
-
-- [graceful]({{< source "graceful-shutdown/graceful" >}})
-- [grace]({{< source "graceful-shutdown/grace" >}})
+## [Source Code]({{< source "graceful-shutdown" >}})
 
 ## Maintainers
 

@@ -4,7 +4,6 @@ description = "Middleware example for Echo"
 [menu.main]
   name = "Middleware"
   parent = "cookbook"
-  weight = 3
 +++
 
 ## How to write a custom middleware?
@@ -25,7 +24,7 @@ description = "Middleware example for Echo"
 Content-Length:122
 Content-Type:application/json; charset=utf-8
 Date:Thu, 14 Apr 2016 20:31:46 GMT
-Server:Echo/2.0
+Server:Echo/3.0
 ```
 
 *Body*
