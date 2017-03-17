@@ -1,4 +1,4 @@
-package: github.com/olebedev/go-starter-kit
+package: github.com/briankeane/playolaRoyalties
 import:
 - package: github.com/codegangsta/cli
 - package: github.com/dop251/goja
